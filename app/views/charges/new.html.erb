@@ -1,0 +1,12 @@
+<%= form_tag checkout_payment_path, method: :post do %>
+    Grand Total : <%= @product.price %> $
+
+    <%= hidden_field_tag :product_id, @product.id %>
+    <script class="stripe-button" 
+               data-amount="<%= @product.price.to_i*100 %>" 
+               data-currency="inr" 
+               data-email="<%=current_admin_user.email %>" 
+               data-key="<%= Rails.configuration.stripe[:publishable_key] %>" 
+               src="https://checkout.stripe.com/checkout.js">
+    </script>
+<% end %>

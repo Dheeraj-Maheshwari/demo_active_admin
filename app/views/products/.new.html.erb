@@ -1,0 +1,11 @@
+<%= form_for @product do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name  %><br>
+  <%= f.label :price %>
+  <%= f.text_field :price  %>
+  <%= f.label :email %>
+  <%= f.text_field :email  %>
+  <%= f.label :pic %>
+  <%= f.file_field :avatar  %>
+<%= f.submit "create"%>
+<%end%>

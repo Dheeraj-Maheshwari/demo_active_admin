@@ -1,0 +1,8 @@
+<%= image_tag @product.avatar.url%><br>
+<h1>  <%= @product.name%></h1><br>
+<h1><%= @product.price%>₹</h1>
+<h1><%= @product.email%>₹</h1>
+<h3><%= link_to "Buy Now", new_charge_path(:product_id => @product.id), class: "add-to-cart btn btn-default" %></h3>
+<h3><%= link_to "Pay Using PayPal ", express_path(:product_id => @product.id) %></h3>
+<%#= link_to(image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), express_checkout_path)%>
+<%#= link_to 'checkout', product.paypal_url(products_url) %> 
